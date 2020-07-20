@@ -1,0 +1,55 @@
+// vim: set ts=2 sw=2 et:
+
+/* Academic records section styles */
+div.arec
+  width: 100%
+  padding: 2px 0px
+  table.t_ar_bdy
+    @extend %r_tbl_shared
+    td.t_ar_spec
+      @extend %r_tbl_td
+      background: $g_clr_dgrey
+      color: $g_code_clr
+      font-weight: bold
+      text-align: center
+    td.t_ar_date
+      @extend %r_tbl_td
+      width: 25%
+      text-align: center
+      background: $g_clr_grey
+    td.t_ar_name
+      @extend %r_tbl_td
+    td.t_ar_major
+      @extend %r_tbl_td
+  >div.ar_certs
+    padding: 4px
+    @media print
+      padding: 0px 25% 0px 25px
+    h5
+      background: $g_clr_grey
+      box-shadow: unset
+      border-radius: unset
+      text-align: center
+      font-size: 14px
+      font-weight: bold
+      font-style: normal
+      margin: unset
+    table.t_ar_cert
+      @extend %r_tbl_shared
+      th.param
+        @extend %r_tbl_th
+        font-weight: bold
+        font-style: normal
+      td.value
+        @extend %r_tbl_td
+        font-weight: normal
+        font-style: normal
+
+/* Lingual info */
+table.t_comms_langs
+  @extend %r_tbl_shared
+  th.param
+    @extend %r_tbl_th
+    font-weight: bold
+  td.value
+    @extend %r_tbl_td

@@ -1,0 +1,12 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2 et: -->
+{% endcomment %}
+<!-- DIV: Other projects and activities -->
+<div class="r_section" id="paa"> <!-- BEGIN DIV::Projects -->
+  <h5>Other Projects and open source activities</h5>
+{% for p in site.projects reversed %}
+<!-- BEGIN project {{p.name}} -->
+{% include project.html %}
+<!-- END project {{p.name}} -->
+{% endfor %}
+</div> <!-- END DIV::Projects -->
