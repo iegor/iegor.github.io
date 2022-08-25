@@ -1,0 +1,4 @@
+_site/
+*.sw[a-z]
+.sass-cache/
+.directory

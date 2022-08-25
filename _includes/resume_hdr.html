@@ -1,0 +1,125 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2: -->
+{% endcomment %}
+<head>
+  <title>{{page.person}}'s resume</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/main.css"> </link>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154129952-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-154129952-1');
+  </script>
+
+  <!-- BEGIN: script:pp:mouse_react -->
+  <script type="application/ecmascript">
+    function handle_mouse_move(e) {
+      e = e || window.event; // IE-ism
+
+      var v=Array(2);
+
+      ctr[0]=(pp.clientWidth-pp.clientLeft)/2;
+      ctr[1]=(pp.clientHeight-pp.clientTop)/2;
+
+      v[0]=e.clientX-ctr[0];
+      v[1]=e.clientY-ctr[1];
+
+      var len=Math.hypot(v[0], v[1]);
+
+      if(len < ppr) {
+        if(!pp_visible) { open_anim(); }
+      } else {
+        if(pp_visible) { close_anim(); }
+      }
+      //console.log("X:" + e.clientX.toString(), ", Y:" + e.clientY.toString());
+      //console.log("X:" + v[0].toString(), ", Y:" + v[1].toString(), ", Hypot:" + h.toString());
+    }
+
+    var cts=null;
+    var soc=null;
+    var wps=null;
+    var pp=null;
+    var pp_visible=true;
+    var step=20;
+    var px=0;
+    var opened=10;
+    var collapsed=-60;
+    var ppr=0;
+    var ctr=Array(2);
+
+    function open_anim() {
+      if(!pp_visible) {
+        px+=step;
+        if(px > opened) {
+          px=opened;
+          pp_visible=true;
+        } else {
+          setTimeout(open_anim,100);
+        }
+        cts.style.marginLeft=px.toString()+"px";
+        soc.style.marginTop=px.toString()+"px";
+
+        wps.style.opacity=(70+px).toString()+"%";
+      }
+    }
+
+    function close_anim() {
+      if(pp_visible) {
+        px-=step;
+        if(px < collapsed) {
+          px=collapsed;
+          pp_visible=false;
+        } else {
+          setTimeout(close_anim,100);
+        }
+        cts.style.marginLeft=px.toString()+"px";
+        soc.style.marginTop=px.toString()+"px";
+
+        wps.style.opacity=(70+px).toString()+"%";
+      }
+    }
+
+    function pp_loop() {
+      if(!pp) {
+        pp=document.getElementById("person-presenter");
+      }
+      if(!pp) {
+        console.log("failed to obtain pp");
+        return;
+      }
+      if(!cts) {
+        cts=pp.getElementsByClassName("contacts")[0];
+      }
+      if(!soc) {
+        soc=pp.getElementsByClassName("social")[0];
+      }
+      if(!wps) {
+        wps=pp.getElementsByClassName("workpose")[0];
+      }
+      document.onmousemove=handle_mouse_move;
+
+      ppr=Math.max(pp.clientWidth-pp.clientLeft, pp.clientHeight-pp.clientTop);
+      ppr-=100;
+      //console.log("ppr:" + ppr.toString());
+
+      cts.style.marginLeft="-60px";
+      soc.style.marginTop="-60px";
+      pp_visible=false;
+      wps.style.opacity="10%";
+
+      px=0;
+      step=20;
+      opened=10;
+      collapsed=-60;
+      ctr[0]=0;
+      ctr[1]=0;
+    }
+  </script>
+  <!-- END: script:pp:mouse_react -->
+</head>
