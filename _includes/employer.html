@@ -1,0 +1,93 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2: -->
+{% endcomment %}
+<!-- BEGIN: employer {{e.name}} -->
+<div class="slot_employment">
+  <div class="emp_ribbon"></div>
+  <div class="emp_content">
+    <div id="emp_hdr_rt">
+      {% if e.img %}
+      <div class="emp_logo">
+        {% comment %}
+        <!-- TODO: это изображение для компании нанимателя или проэкта ? -->
+        {% endcomment %}
+        {% include pictogramms/corp/{{e.img}}.html %}
+      </div>
+      {% else %}
+      {% endif %}
+      <div>
+      <table class="t_emp_hdr">
+        <tr>
+          <td class="value"><a href={{e.homepage}}>{{e.name}}</a></td>
+        </tr>
+        <tr>
+          <td class="value">
+            {{e.start|date: '%B, %Y'}} -
+            {% if e.end %}
+              {{e.end|date: '%B, %Y'}}
+            {% else %}
+              now
+            {% endif %}
+          </td>
+        </tr>
+      </table>
+      </div>
+    </div>
+    {% for p in e.projects %}
+    <div class="slot_employment_prj">
+      <table class="t_emp_prj_hdr">
+        <tr>
+          <th class="param">Project Name</th>
+          {% if p.homepage %}
+            <td class="value"><a href="{{p.homepage}}">{{p.title}}</a></td>
+          {% else %}
+            <td class="value">{{p.title}}</td>
+          {% endif %}
+        </tr>
+        <tr class="t_emp_prjhdr_ts">
+          <th class="param">Team size</th>
+          <td class="value">{{p.size}}</td>
+        </tr>
+        <tr>
+          <th class="param">Title</th>
+          <td class="value">{{e.position}}</td>
+        </tr>
+      </table>
+      <table class="t_emp_prj_desc">
+        <tr>
+          <th class="param">Project description</th>
+        </tr>
+        <tr>
+          <td class="value">{{p.desc}}</td>
+        </tr>
+      </table>
+      <table class="t_emp_prj_rnd">
+        <tr>
+          <th class="param">Responsibilities and Duties</th>
+        </tr>
+        <tr>
+          <td class="value">
+            <ul>
+              {% for r in p.rsp %}
+                <li>{{r.n}}</li>
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <table class="t_emp_prj_tech">
+        <tr>
+          <th class="param">Technological stack</th>
+        </tr>
+        <tr>
+          <td class="value">
+          {% include tecdiv.html c=p.tech %}
+          </td>
+        </tr>
+      </table>
+      <div class="prj_ribbon"></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- END: employer {{e.name}} -->

@@ -1,0 +1,66 @@
+// vim: set ts=2 sw=2 et:
+
+/* Academic records section styles */
+div.arec
+  +bg_carbon_t2($g_clr_white)
+  width: 100%
+  padding: 2px 0px
+  border-radius: 4px
+  margin: 4px 0px
+  table.t_ar_bdy
+    @extend %r_tbl_emp_hdr
+    td.t_ar_spec
+      @extend %r_tbl_th
+      //background: $g_clr_dgrey
+      //color: $g_code_clr
+      font-weight: bold
+      text-align: center
+      box-shadow: none
+      //background: transparent
+      //text-shadow: 0px 0px 1px $g_clr_dgrey
+      border-radius: 4px
+    td.t_ar_date
+      @extend %r_tbl_td
+      width: 35%
+      +min_width_max_content
+      text-align: center
+    td.t_ar_name
+      @extend %r_tbl_td
+    td.t_ar_major
+      @extend %r_tbl_td
+  >div.ar_certs
+    padding: 4px
+    @media print
+      padding: 0px 25% 0px 25px
+    h5
+      background: $g_clr_grey
+      box-shadow: unset
+      border-radius: unset
+      text-align: center
+      font-size: 14px
+      font-weight: bold
+      font-style: normal
+      margin: unset
+    table.t_ar_cert
+      @extend %r_tbl_shared
+      th.param
+        @extend %r_tbl_th
+        font-weight: bold
+        font-style: normal
+      td.value
+        @extend %r_tbl_td
+        font-weight: normal
+        font-style: normal
+
+/* Lingual info */
+table.t_comms_langs
+  +bg_carbon_t2($g_clr_white)
+  @extend %r_tbl_emp_hdr
+  border-radius: 4px
+  th.param
+    @extend %r_tbl_th
+    font-weight: bold
+    text-align: center
+    border-radius: 4px
+  td.value
+    @extend %r_tbl_td

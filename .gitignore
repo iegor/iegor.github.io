@@ -1,0 +1,6 @@
+_site/
+*.sw[a-z]
+.sass-cache/
+.directory
+
+assets/img/_src/

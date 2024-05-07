@@ -1,0 +1,52 @@
+// vim: set ts=2 sw=2 et:
+/* Other projects and activities section styles */
+div.slot_op
+  @extend %g_shared
+  width: 100%
+  // padding-bottom: 0px
+  // color: #000
+  // line-height: 20px
+  // border: 0px
+  margin: 8px 0px 8px 0px
+  padding: 0px 0px 0px 0px
+  background: transparent
+  >table.t_op_hdr
+    @extend %r_tbl_shared
+    //padding: 0px 5px 0px 5px
+    td.name
+      @extend %r_tbl_th
+      width: 100%
+      text-align: center
+    td.goal
+      @extend %r_tbl_td
+      width: 100%
+      text-align: center
+  >table.t_op_desc
+    @extend %r_tbl_shared
+    padding: 0px 5px 0px 5px
+    th.param
+      @extend %r_tbl_th
+      width: 100%
+    td.value
+      @extend %r_tbl_td
+      width: 100%
+  >table.t_op_rnd
+    @extend %r_tbl_shared
+    padding: 0px 5px 0px 5px
+    th.param
+      @extend %r_tbl_th
+      width: 100%
+    td.value
+      @extend %r_tbl_td
+      width: 100%
+      >ul
+        padding: 0px 1em 0px 2em
+        >li
+          padding: 0px 1em 0px 2em
+  >table.t_op_tech
+    @extend %r_tbl_shared
+    padding: 0px 5px 0px 5px
+    th.param
+      @extend %r_tbl_th
+    td.value
+      @extend %r_tbl_td
