@@ -1,0 +1,168 @@
+---
+---
+{% comment %}
+<!-- vim: set ts=2 sw=2 fdm=marker foldmarker=BEGIN\:,END\: : -->
+<!-- TODO: do the odt export -->
+<!-- TODO: do the doc(x) export ??? -->
+<!-- TODO: Can exporting be done via jekyll or js,
+  while site is re-generated ??? -->
+{% endcomment %}
+<!doctype html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+  {% include resume_hdr.html %}
+  <body onload="pg_init()">
+    <!-- BEGIN: header -->
+    <!-- TODO: avatar: remove "++" fom image, C is grown on me way more -->
+    <div class="r_section">
+      <h3 id="ri_namehdr"><div class="l1">{{page.person}}</div></h3>
+      <div class="r_section noprint" id="person-presenter">
+        <div class="r_person_hdr">
+          <div class="r_pp_cover_petal_lt">
+            <div class="filler"></div>
+            <div class="strip"></div>
+          </div>
+          <div class="r_pp_cover_petal_lb">
+            <div class="strip"></div>
+            <div class="filler"></div>
+          </div>
+          <div class="r_pp_cover_petal_rt">
+            <div class="filler"></div>
+            <div class="strip"></div>
+          </div>
+          <div class="r_pp_cover_petal_rb">
+            <div class="strip"></div>
+            <div class="filler"></div>
+          </div>
+          <div class="cts_l">
+            <div class="icon-email">
+              <a href="{{page.contact.email}}">
+                {% include pictogramms/social-media/flat/email.html %}</a>
+            </div>
+            <div class="icon-telegram">
+              <a href="{{page.contact.telegram}}">
+                {% include pictogramms/social-media/flat/telegram.html %}</a>
+            </div>
+            <div class="icon-skype">
+              <a href="{{page.contact.skype}}">
+                {% include pictogramms/social-media/flat/skype.html %}</a>
+            </div>
+          </div>
+          <div class="cts_r">
+            <div class="icon-twitter">
+              <a href="{{page.contact.twitter}}">
+                {% include pictogramms/social-media/flat/twitter.html %}</a>
+            </div>
+            <div class="icon-linkedin">
+              <a href="{{page.contact.linkedin}}">
+                {% include pictogramms/social-media/flat/linkedin.html %}</a>
+            </div>
+            <div class="icon-github">
+              <a href="{{page.contact.github}}">
+                {% include pictogramms/social-media/flat/github.html %}</a>
+            </div>
+          </div>
+          <div class="workpose">
+            <div class="workpose_image">
+              {% include pictogramms/ava.html %}
+              <div class="person-title">
+                <h5>{{page.title}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: header -->
+    <!-- BEGIN: Summary -->
+    <div class="r_section" id="summary">
+      <h5><div class="l1">Summary</div></h5>
+      <div id="ri_summary">
+        {{page.summ}}
+      </div>
+    </div>
+    <!-- END: Summary -->
+    <!-- BEGIN: TechStack -->
+    <!-- TODO: add level of competence to each techslot -->
+    <!-- TODO: add description and details
+      - where was used
+      - what sub-things were used
+      - experience timescale
+      to each techslot -->
+    <div class="r_section">
+      <h5><div class="l1">Techstack</div></h5>
+      <table class="r_tbl_techstack">
+        <tr> <th class="param">Programming languages</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_lang %} </td> </tr>
+        <tr> <th class="param">Build systems, compilers, debuggers</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_tools %} </td> </tr>
+        <tr> <th class="param">Test facilities</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_test %} </td> </tr>
+        <tr> <th class="param">Virtualization</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_vm %} </td> </tr>
+        <tr> <th class="param">Computer graphics and game development</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_gfx %} </td> </tr>
+        <tr> <th class="param">Embeddded software development</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_mbd %} </td> </tr>
+        <tr> <th class="param">CAD and 3D modeling</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_cad %} </td> </tr>
+        <tr> <th class="param">Toolkits, APIs and libraries</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_lib %} </td> </tr>
+        <tr> <th class="param">Version control, deployment, collaboration and continuous integration</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_cc %} </td> </tr>
+        <tr> <th class="param">OS:Linux</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_linuxos %} </td> </tr>
+        <tr> <th class="param">Other OSes</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_otheros %} </td> </tr>
+        <tr> <th class="param">Administration, OS, shells, editors, IDE</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_adminos %} </td> </tr>
+        <tr> <th class="param">Web and networking</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_webnt %} </td> </tr>
+        <tr> <th class="param">Database</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_db %} </td> </tr>
+        <tr> <th class="param">Office</th> </tr>
+        <tr> <td class="value"> {% include tecdiv.html c=page.ts_office %} </td> </tr>
+      </table>
+    </div>
+    <!-- END: TechStack -->
+    <!-- BEGIN: Work Experience -->
+    {% comment %}
+    <!-- TODO: combine newest employers under one file -->
+    <!-- TODO: a way to display period in project section -->
+    {% endcomment %}
+    <div class="r_section" id="workexp">
+      <h5><div class="l1">Work Experience</div></h5>
+      {% for e in site.employers reversed %}
+      {% include employer.html %}
+      {% endfor %}
+    </div>
+    <!-- END: Work Experience -->
+    {% include academic.html %}
+    <!-- BEGIN: Languages -->
+    <div class="r_section">
+      <h5><div class="l1">Languages</div></h5>
+      <table class="t_comms_langs">
+      {% for l in page.ar_lang %}
+        <tr>
+          <th class="param">{{l.n}}</th>
+          <td class="value">{{l.l}}</td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+    <!-- END: Languages -->
+    <div class="r_section">
+      <h5><div class="l1">Personal qualities,
+          interests and additional information</div></h5>
+      <div id="ri_modo">{{page.modo}}</div>
+    </div>
+    {% include resume_ftr.html %}
+  </body>
+</html>

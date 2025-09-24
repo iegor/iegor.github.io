@@ -1,0 +1,16 @@
+# basic options
+title: codecloset
+author: iegor
+email: rmtdev@gmail.com
+
+# jekyll options
+markdown: kramdown
+
+collections:
+  - employers
+  - projects
+  - technologies
+
+sass:
+  sass_dir: assets/css
+  style: :nested

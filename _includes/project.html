@@ -1,0 +1,46 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2 et: -->
+{% endcomment %}
+<div class="slot_op"> <!-- BEGIN: project p.name -->
+  <div class="handle"></div>
+  <div class="content">
+    {% if p.homepage %}
+    <h5 class="name">
+      <a href="{{p.homepage}}">{{p.name}}</a>
+    </h5>
+    {% else %}
+    <h5 class="name">{{p.name}}</h5>
+    {% endif %}
+    <div class="goal">{{p.goal}}</div>
+    {% if p.desc %}
+    <table class="t_op_desc">
+      <tr><th class="param">Description</th></tr>
+      <tr>
+        <td class="value">{{p.desc}}</td>
+      </tr>
+    </table>
+    {% endif %}
+    {% if p.rad %}
+    <table class="t_op_rnd">
+      <tr><th class="param">Responsibilities and Duties</th></tr>
+      <tr>
+        <td class="value">
+          <ul>
+            {% for r in p.rad %}
+            <li>{{r.t}}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+    </table>
+    {% endif %}
+    <table class="t_op_tech">
+      <tr><th class="param">Technologies</th></tr>
+      <tr>
+        <td class="value">
+          {% include tecdiv.html c=p.tech %}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div> <!-- END: project p.name -->

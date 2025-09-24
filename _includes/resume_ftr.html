@@ -1,0 +1,70 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2 fdm=marker foldmarker=BEGIN\:,END\: : -->
+{% endcomment %}
+<footer class="footer">
+  <script>
+    function urlvar() {
+      var _v = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        _v[key] = value;
+      });
+      return _v;
+    }
+
+    function urlparam(param, _default){
+      var uparam = _default;
+      if(window.location.href.indexOf(param) > -1){
+        uparam = urlvar()[param];
+        }
+      return uparam;
+    }
+
+    //BEGIN: check and enable proj team size
+    if(urlparam('tsz',0) == 1) {
+      var e=document.getElementsByClassName("t_emp_prjhdr_ts");
+      var i;
+      for(i=0;i<e.length;i++) {
+        e[i].style.display = "contents";
+        e[i].style.visibility = "visible";
+      }
+    }
+    else {
+      var e=document.getElementsByClassName("t_emp_prjhdr_ts");
+      var i;
+      for(i=0;i<e.length;i++) {
+        e[i].style.display = "none";
+        e[i].style.visibility = "hidden";
+      }
+    }
+    //END:
+
+    //BEGIN: check and enable proj rnd
+    if(urlparam('rnd',0) == 1) {
+      var e=document.getElementsByClassName("t_emp_prj_rnd");
+      var i;
+      for(i=0;i<e.length;i++) {
+        e[i].style.display = "table";
+        e[i].style.visibility = "visible";
+      }
+    }
+    else {
+      var e=document.getElementsByClassName("t_emp_prj_rnd");
+      var i;
+      for(i=0;i<e.length;i++) {
+        e[i].style.display = "none";
+        e[i].style.visibility = "hidden";
+      }
+    }
+    //END:
+  </script>
+  <div class="content-wrapper">
+    <nav class="footer_nav">
+      <a href="/resume?rnd=1&ageism=1&tsz=1"
+         title="Show:
+        - responsibilities and duties
+        - dates
+        - team sizes
+        ... for more curious explorers">Expanded version</a>
+    </nav>
+  </div>
+</footer>

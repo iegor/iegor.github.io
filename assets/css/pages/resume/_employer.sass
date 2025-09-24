@@ -1,0 +1,100 @@
+// vim: set ts=2 sw=2 et:
+
+/* Employment section styles */
+div.slot_employment
+  //+transform(rotate3d(1,-1,0,30deg))
+  //+transform(rotate(30deg))
+  @extend %g_shared
+  width: 100%
+  background: transparent
+  margin: 10px 0px 10px 0px
+  padding: 0px 0px 0px 0px
+  display: flex
+  div.emp_ribbon
+    @extend %g_shared
+    width: auto
+    padding: 4px
+    +bg_carbon($g_clr_white)
+    +noprint
+  div.emp_content
+    width: 100%
+    height: 100%
+    div#emp_hdr_rt
+      @extend %g_shared
+      +bg_carbon($g_clr_white)
+      padding: 4px 4px 4px 0px
+      display: flex
+      @media print
+        background: lighten($r_slot_clr, 13%)
+        -webkit-print-color-adjust: exact !important
+      div.emp_logo
+        margin: auto 2px
+        @extend %r_proj_img
+        [id^="bodyl-path"]
+          fill: $g_rperson_hdr_icon_fill_clr
+          stroke: $g_rperson_hdr_icon_stroke_clr
+        [id^="bodyu-path"]
+          fill: $g_rperson_hdr_icon_stroke_clr
+          stroke: $g_rperson_hdr_icon_stroke_clr
+        [id^="bodyp-path"]
+          stroke: $g_rperson_hdr_icon_fill_clr
+        @media print
+          background: inherit
+        svg
+          *
+            @media print
+              fill: lighten($r_slot_clr, 13%)
+      div
+        margin: auto 2px
+        table.t_emp_hdr
+          @extend %r_tbl_emp_hdr
+          th.param
+            @extend %r_tbl_th
+            @media print
+              background: inherit
+          td.value
+            @extend %r_tbl_td
+            @media print
+              background: inherit
+    div.slot_employment_prj
+      @extend %g_shared
+      margin: 0px 0px 0px 0px
+      padding: 0px 8px 0px 0px
+      background: transparent
+      table.t_emp_prj_hdr
+        @extend %r_tbl_shared
+        padding: 0px 0px 0px 0px
+        background: #858585
+        tr.t_emp_prjhdr_ts
+          visibility: hidden
+          display: none
+        th.param
+          @extend %r_tbl_th
+          width: 20%
+        td.value
+          @extend %r_tbl_td
+      table.t_emp_prj_desc
+        @extend %r_tbl_shared
+        th.param
+          @extend %r_tbl_th
+        td.value
+          @extend %r_tbl_td
+      table.t_emp_prj_rnd
+        @extend %r_tbl_shared
+        visibility: hidden
+        display: none
+        th.param
+          @extend %r_tbl_th
+        td.value
+          @extend %r_tbl_td
+      table.t_emp_prj_tech
+        @extend %r_tbl_shared
+        th.param
+          @extend %r_tbl_th
+        td.value
+          @extend %r_tbl_td
+      div.prj_ribbon
+        +bg_carbon($g_clr_white)
+        width: auto
+        padding: 2px
+        +noprint

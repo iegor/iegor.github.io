@@ -1,0 +1,141 @@
+// vim: set ts=2 sw=2 et:
+
+$g_clr_wp_f: $g_clr_dblack
+$g_clr_wp_s: lighten($g_clr_black, 3%)
+
+header.header
+  border-radius: 2px
+  div.content-wrapper
+    nav.header_nav
+      border-radius: 2px
+
+footer.footer
+  border-radius: 2px
+  div.content-wrapper
+    nav.footer_nav
+      border-radius: 2px
+
+// BEGIN: pages:resume {{{
+div.r_section
+  border: none
+  border-radius: 2px
+  background: $g_clr_dwhite
+  h3#ri_namehdr
+    +bg_carbon($g_clr_grey)
+    padding: 0px
+    margin: 0px
+    border: none
+    div.l1
+      padding: 4px
+      box-shadow: inset 0px 0px 2px 2px $g_clr_dgrey
+      background: linear-gradient(rgba($r_hdr_clr, 0.9),rgba(darken($r_hdr_clr, 10%), 0.7))
+      +media_print
+  h5
+    +bg_carbon($g_clr_grey)
+    padding: 0px
+    div.l1
+      padding: 4px
+      box-shadow: inset 0px 0px 2px 2px $g_clr_dgrey
+      background: linear-gradient(rgba($r_hdr_clr, 0.9),rgba(darken($r_hdr_clr, 10%), 0.7))
+      +media_print
+
+div.r_techsection
+  div.r_techslot
+    border-radius: 2px
+
+div#person-presenter
+  background-color: $g_clr_black
+  div.r_person_hdr
+    div.workpose
+      +bg_carbon($g_clr_white)
+      border-radius: 4px
+      .workpose_image
+        [id^="bodyl-path"]
+          fill: $g_clr_wp_f
+          stroke: $g_clr_wp_s
+        [id^="bodyu-path"]
+          fill: $g_clr_wp_s
+          stroke: $g_clr_wp_s
+        [id^="bodyp-path"]
+          stroke: $g_clr_wp_f
+        div.person-title
+          border-radius: unset
+          h5
+            border-radius: unset
+    [class^="icon-"]:active
+      path
+        fill: $g_clr_dblack
+      rect
+        fill: lighten($g_clr_grey, 25%)
+    div.r_pp_cover_petal_lt,
+    div.r_pp_cover_petal_lb,
+    div.r_pp_cover_petal_rt,
+    div.r_pp_cover_petal_rb
+      div.filler
+        background: $g_clr_dwhite
+    div.cts_l
+      +bg_carbon($g_clr_white)
+      border-radius: 4px
+    div.cts_r
+      +bg_carbon($g_clr_white)
+      border-radius: 4px
+// BEGIN: pages:resume:employment {{{
+%r_tbl_emp_hdr
+  td
+    border-radius: 2px
+
+%r_proj_img
+  border-radius: 2px
+
+%r_hx_common
+  border-radius: 2px
+  
+div.slot_employment
+  div.emp_ribbon
+    +bg_carbon($g_clr_dblue)
+    border-radius: 4px 0px 0px 4px
+    +noprint
+  div.emp_content
+    div#emp_hdr_rt
+      +bg_carbon($g_clr_dblue)
+      border-radius: 0px 4px 4px 0px
+      +media_print
+      @media print
+        background: lighten($r_slot_clr, 13%)
+        -webkit-print-color-adjust: exact !important
+    div.slot_employment_prj
+      div.prj_ribbon
+        +bg_carbon($g_clr_dblue)
+        border-radius: unset
+        +noprint
+// END: pages:resume:employment }}}
+// BEGIN: pages:resume:academics {{{
+div.arec
+  background: darken($g_clr_white, 37%)
+  border-radius: 2px
+  @media print
+    padding: 0px 25% 0px 25px
+    background: lighten($r_slot_clr, 13%)
+  div.handle
+    +bg_carbon($g_clr_dblue)
+  div.content
+    @media print
+      padding: 0px 25% 0px 25px
+      background: lighten($r_slot_clr, 13%)
+    table.t_ar_bdy
+      td.t_ar_spec
+        border-radius: 2px
+    div.ar_certs
+      h5
+        background: $g_clr_dwhite
+        border-radius: unset
+
+table.t_comms_langs
+  background: darken($g_clr_white, 37%)
+  border-radius: 2px
+  th.param
+    border-radius: 2px
+    @media print
+      background: lighten($r_slot_clr, 13%)
+// END: pages:resume:academics }}}
+// END: pages:resume }}}

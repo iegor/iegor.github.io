@@ -1,0 +1,55 @@
+// vim: set ts=2 sw=2 et:
+
+$g_clr_bg: #0F2030
+$g_clr_fg: #F2ECF8
+// Black
+$g_clr_black: #1F232F
+$g_clr_dblack: #09090D
+// Red
+$g_clr_red: #B26F7A
+$g_clr_dred: #8C5760
+// Green
+$g_clr_green: #09090D
+$g_clr_dgreen: #7B8C58
+// Yellow
+$g_clr_yellow: #B28C55
+$g_clr_dyellow: #8C6E43
+// Blue
+$g_clr_blue: #86A8CE
+$g_clr_dblue: #26415C
+// Magenta
+$g_clr_magenta: #9B8AB4
+$g_clr_dmagenta: #564A94
+// Cyan
+$g_clr_cyan: #41A7C6
+$g_clr_dcyan: #388FAA
+// White
+$g_clr_white: #FFFFFF
+$g_clr_dwhite: #D9D9D9
+
+$g_clr_grey: darken($g_clr_white, 60%)
+$g_clr_dgrey: darken($g_clr_white, 75%)
+
+$g_txt_clr: $g_clr_dblack
+$g_lnk_clr: $g_clr_bg
+$g_sel_clr: $g_clr_dblue
+$g_code_clr: $g_clr_dwhite
+$g_caution_clr: $g_clr_dyellow
+
+// debug coloring
+$g_dbg_borderclr: $g_clr_dblack
+
+$img_bg: url('/assets/img/carbon/ct2.jpg')
+$img_caution: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAgCAYAAABZyotbAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJUlEQVRYw9XYv2oiURQG8O+OGrESQUEigtZaKnkCI8QmadTGRrC20AewsLISbMTSF7CwsBJS2FgFLEQbIQwoCiI2Dkbx22KZZdldFlm9B/bAganm8ptz/5w7AEAA3G63lIrPz086nU7aY2vK7w+BQICmafJyuYjg5vM5AVAppRcGgNFolKZpilVuu93S7XbrhwFgPB6nZDSbTRkYAFarVVHc29ubDAwAX15eRHHlclkGBoCNRkMUl8vlZGAul4utVksM9vX1xUQioR9mZ7/fF8XFYjEZGACSFDvjSDKVSt0EM3BFGIYBpRQsy4JUFIvFm99x9Vfw+XyilRuPx/qn4s/tj2QMBgP9MDtLpdL/0J38W6nr9boorlKpyMAAMJ/P83w+i+E6nY4MDADf399FK5fJZGRgANjtdsVglmVde4+7T282HA5FYPZR8/j4+Pcd3NbdIw6HAzwej8gBvt/vEQwGcTweQf5OMO41kFIKyWRSrDvxer1ot9t4eHi4vfO4JiORCFerldiaG4/HdLlcf1pz94Uppfj09CS6U/Z6PX2bx6+ZTqdFcbVaTQYGgK+vrzydTmK4QqEgAwPA0WgkWrlsNqsfZi/oyWQiBlsulwyFQsTz87PuX800DIMfHx9iONM0id1uR7/frx0HgNPpVAwHkpxMJrr/oxMAw+EwN5uNyA38x3V4sVjQ4XBor1o8Hud6vZaDkeRsNhOZkoFAgPP5XCvsG6Y1nmeanHU/AAAAAElFTkSuQmCC)
+
+=bg_carbon($clr)
+  background: $img_bg $clr
+  background-blend-mode: multiply
+  background-repeat: repeat repeat
+  background-size: 8px
+
+=bg_caution($clr)
+  background: $img_caution $clr
+  background-repeat: repeat no-repeat
+  background-blend-mode: darken
+  background-size: 28px 100%

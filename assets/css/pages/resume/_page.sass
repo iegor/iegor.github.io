@@ -1,0 +1,265 @@
+// vim: set ts=2 sw=2 et:
+
+div.r_section
+  @extend %g_shared
+  background: darken($g_clr_white, 20%)
+  // line-height: 20px
+  margin: 0px 0px 10px 0px
+  padding: 4px
+  box-shadow: 0 0 2px 1px $g_clr_grey
+  +media_print()
+  h3#ri_namehdr
+    @extend %r_hx_common
+    margin: 0px
+    vertical-align: top
+    font-size: 24px
+    font-weight: bold
+    font-style: normal
+    text-align: center
+    div.l1
+      background: transparent
+  h5
+    @extend %r_hx_common
+    vertical-align: top
+    font-size: 16px
+    text-align: left
+    div.l1
+      background: transparent
+  div#ri_summary, #ri_modo
+    background: $r_sec_clr
+    text-align: left
+    margin: 0px 0px 0px 0px
+    padding: 4px
+  table.r_tbl_techstack /* Tech-stack section styles */
+    @extend %r_tbl_shared
+    th.param
+      @extend %r_tbl_th
+      font-weight: normal
+      font-style: normal
+      font-size: 11px
+      @media print
+        background: lighten($r_slot_clr, 13%)
+        -webkit-print-color-adjust: exact !important
+    td.value
+      @extend %r_tbl_td
+      font-family: 'monospace'
+      font-weight: normal
+      font-style: normal
+      padding: 0px
+
+  .e-sig
+    th
+      background: $r_hdr_clr
+    td
+      background: $r_sec_clr
+
+div#person-presenter
+  box-shadow: none
+  background-color: $g_clr_bg 
+  pointer-events: auto
+  height: auto
+  margin: 4px 0px 0px 0px
+  padding: 0px
+  div.r_person_hdr
+    width: 100%
+    height: 184px
+    background: transparent
+    display: grid
+    grid-gap: 0px
+    grid-auto-rows: 25%
+    margin: 0px
+    padding: 0px
+    div
+      margin: auto
+      padding: 4px
+      box-shadow: inset 0px 0px 2px 2px $r_bgd_clr
+      background: $g_code_clr
+    div.workpose
+      margin: 8px auto auto auto
+      padding: 4px
+      z-index: 4
+      grid-column-start: 2
+      grid-column-end: 4
+      grid-row-start: 1
+      grid-row-end: 4
+      +media_print
+      .workpose_image
+        @extend %r_proj_img
+        width: 152px
+        height: 152px
+        margin: auto
+        box-shadow: inset 0px 0px 2px 2px $g_clr_dgrey
+        +text_sel_forbid()
+        [id^="bodyl-path"]
+          fill: $g_rperson_hdr_icon_fill_clr
+          stroke: $g_rperson_hdr_icon_stroke_clr
+        [id^="bodyu-path"]
+          fill: $g_rperson_hdr_icon_stroke_clr
+          stroke: $g_rperson_hdr_icon_stroke_clr
+        [id^="bodyp-path"]
+          stroke: $g_rperson_hdr_icon_fill_clr
+        div.person-title
+          top: -25px
+          position: relative
+          border: none
+          background: transparent
+          box-shadow: none
+          width: 80%
+          height: auto
+          h5
+            background: transparent
+            text-align: center
+            text-shadow: 0px 0px 5px $g_clr_bg
+            font-size: 12px
+            color: $g_code_clr
+            box-shadow: none
+            margin: 0px 0px 2px 0px
+            padding: 2px 0px 2px 0px
+    [class^="icon-"]:hover, [class^="icon-"]:focus
+      background: $g_rsection_hovbgr_clr
+      path
+        fill: lighten($r_bgd_clr, 8%)
+    [class^="icon-"]:active
+      background: $g_rsection_actbgr_clr
+      path
+        fill: $r_bgd_clr
+    [class^="icon-"]
+      @extend %r_proj_img
+      width: 64px
+      height: 64px
+      path
+        fill: $r_bgd_clr
+        stroke: $r_bgd_clr
+      path.thindetail
+        fill: $r_bgd_clr
+        stroke: $r_bgd_clr
+    div.r_pp_cover_petal_lt,
+    div.r_pp_cover_petal_lb,
+    div.r_pp_cover_petal_rt,
+    div.r_pp_cover_petal_rb
+      margin: 2px
+      padding: 0px
+      width: 99%
+      height: 95%
+      div.filler
+        width: 100%
+        height: 85%
+        margin: 0px
+        padding: 0px
+      div.strip
+        position: relative
+        +bg_caution($g_caution_clr)
+        width: 100%
+        height: 15%
+        margin: 0px
+        padding: 0px
+    div.r_pp_cover_petal_lt,
+    div.r_pp_cover_petal_lb
+      box-shadow: none
+      background-color: rgba(purple, 0.7)
+      z-index: 2
+    div.r_pp_cover_petal_lt
+      grid-column-start: 1
+      grid-column-end: 3
+      grid-row-start: 1
+      grid-row-end: 3
+      transform-origin: "top center -30px"
+    div.r_pp_cover_petal_lb
+      grid-column-start: 1
+      grid-column-end: 3
+      grid-row-start: 3
+      grid-row-end: 5
+      transform-origin: "bottom center -30px"
+    div.r_pp_cover_petal_rt,
+    div.r_pp_cover_petal_rb
+      box-shadow: none
+      background-color: rgba(lightblue, 0.7)
+      z-index: 2
+    div.r_pp_cover_petal_rt
+      grid-column-start: 3
+      grid-column-end: 5
+      grid-row-start: 1
+      grid-row-end: 3
+      transform-origin: "top center -30px"
+    div.r_pp_cover_petal_rb
+      grid-column-start: 3
+      grid-column-end: 5
+      grid-row-start: 3
+      grid-row-end: 5
+      transform-origin: "bottom center -30px"
+    div.cts_l
+      padding: 7px
+      display: flex
+      height: auto
+      width: 70%
+      z-index: 1
+      grid-column: 2
+      grid-row: 2
+      +media_print
+      margin: auto auto auto -20px
+      pointer-events: all
+    div.cts_r
+      padding: 7px
+      display: flex
+      height: auto
+      width: 70%
+      z-index: 1
+      grid-column: 3
+      grid-row: 2
+      +media_print
+      margin: auto -20px auto auto
+      pointer-events: all
+
+// div.r_section#summary
+//   box-shadow: 0 0 2px 1px $g_clr_dred
+
+// div.r_section#workexp
+//   box-shadow: 0 0 2px 1px $g_clr_dgreen
+
+div.r_section#paa
+  box-shadow: 0 0 2px 1px $g_clr_dblue
+  +noprint
+
+div.r_techsection
+  margin: 0px
+  padding: 0px
+  div.r_techslot
+    display: inline-block
+    vertical-align: center
+    //align: center
+    background-color: $r_techslot_clr
+    padding: 2px 4px 2px 4px
+    margin: 2px 1px
+    font-size: 11px
+    font-family: 'monospace'
+    text-align: center
+    a
+      color: $g_lnk_clr
+      text-align: center
+    a:hover, a:focus
+      color: lighten($g_lnk_clr, 40%)
+    @media print
+      color: $g_lnk_clr
+      background: lighten($r_slot_clr, 7%)
+      -webkit-print-color-adjust: exact !important
+  div.r_techslot:hover, div.r_techslot:focus
+    background-color: lighten($g_lnk_clr, 20%)
+
+/* Contact information section styles */
+table.contacts_form
+  @extend %r_tbl_shared
+  width: 25%
+  margin: auto
+  th
+    @extend %r_tbl_th
+  td
+    @extend %r_tbl_td
+
+table.socials
+  @extend %r_tbl_shared
+  width: 25%
+  margin: auto
+  th.param
+    @extend %r_tbl_th
+  td.value
+    @extend %r_tbl_td

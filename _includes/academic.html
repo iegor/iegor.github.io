@@ -1,0 +1,51 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2 et: -->
+{% endcomment %}
+<!-- BEGIN DIV::Academic Experience -->
+<div class="r_section">
+  <h5><div class="l1">Academic Experience</div></h5>
+  {% for a in page.ar %}
+  <div class="arec"> <!-- BEGIN ar {{a.name}} -->
+    <div class="handle"></div>
+    <div class="content">
+      <table class="t_ar_bdy">
+        <tr>
+          <td class="t_ar_spec">{{a.spec}}</td>
+          <td class="t_ar_major">{{a.major}}</td>
+        </tr>
+        <tr>
+          <td class="t_ar_date">
+            <div class="t_ar_date_data">
+            {{a.start|date: '%B, %Y'}} – 
+            {% if a.end %}
+              {{a.end|date: '%B, %Y'}}
+            {% else %} now {% endif %}
+            </div>
+          </td>
+          <td class="t_ar_name">
+            {% if a.l %}
+              <a href="{{a.l}}">{{a.name}}</a>
+            {% else %} {{a.name}} {% endif %}
+          </td>
+        </tr>
+      </table>
+      {% if a.certs %}
+        {% for c in a.certs %}
+        <div class="ar_certs">
+          <h5>Additional information and certificates</h5>
+          <table class="t_ar_cert">
+            <tr>
+              <th class="param">{{c.name}}</th>
+            </tr>
+            <tr>
+              <td class="value">{{c.desc}}</td>
+            </tr>
+          </table>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div> <!-- END ar {{a.name}} -->
+  {% endfor %}
+</div>
+<!-- END DIV::Academic Experience -->

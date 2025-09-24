@@ -1,0 +1,18 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2 et: -->
+{% endcomment %}
+<!--
+  TODO: load project resources (like pictures, etc) from some pub src
+  e.g. something like:
+  https://drive.google.com/drive/folders/<some-projects-contents-to-share>
+  https://drive.google.com/file/d/<some-picture.png>
+-->
+<!-- DIV: Other projects and activities -->
+<div class="r_section" id="paa"> <!-- BEGIN DIV::Projects -->
+  <h5><div class="l1">Other Projects and open source activities</div></h5>
+{% for p in site.projects reversed %}
+<!-- BEGIN project {{p.name}} -->
+{% include project.html %}
+<!-- END project {{p.name}} -->
+{% endfor %}
+</div> <!-- END DIV::Projects -->

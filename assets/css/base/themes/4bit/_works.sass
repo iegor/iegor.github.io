@@ -1,0 +1,79 @@
+// vim: set ts=2 sw=2 et:
+
+header.header
+  border-radius: 4px
+  div.content-wrapper
+    nav.header_nav
+      border-radius: 4px
+
+footer.footer
+  border-radius: 4px
+  div.content-wrapper
+    nav.footer_nav
+      border-radius: 4px
+
+// BEGIN: pages:resume {{{
+div.r_section
+  border: none
+  border-radius: 4px
+
+div.r_techsection
+  div.r_techslot
+    border-radius: 2px
+
+div#person-presenter
+  div.r_person_hdr
+    div.workpose
+      +bg_carbon($g_clr_white)
+      border-radius: 8px
+      .workpose_image
+        div.person-title
+          border-radius: 0px
+          h5
+            border-radius: 0px
+    div.cts_l
+      +bg_carbon($g_clr_white)
+      border-radius: 8px
+    div.cts_r
+      +bg_carbon($g_clr_white)
+      border-radius: 8px
+// BEGIN: pages:resume:employment {{{
+%r_tbl_emp_hdr
+  td
+    border-radius: 4px
+
+%r_proj_img
+  border-radius: 4px
+
+%r_hx_common
+  border-radius: 4px
+  
+div.slot_employment
+  div.emp_ribbon
+    border-radius: 4px 0px 0px 4px
+  div.emp_content
+    div#emp_hdr_rt
+      border-radius: 0px 4px 4px 0px
+    div.slot_employment_prj
+      div.prj_ribbon
+        border-radius: unset
+// END: pages:resume:employment }}}
+// BEGIN: pages:resume:academics {{{
+div.arec
+  border-radius: 4px
+  table.t_ar_bdy
+    td.t_ar_spec
+      //background: $g_clr_dgrey
+      //background: transparent
+      //text-shadow: 0px 0px 1px $g_clr_dgrey
+      border-radius: 4px
+  >div.ar_certs
+    h5
+      border-radius: unset
+
+table.t_comms_langs
+  border-radius: 4px
+  th.param
+    border-radius: 4px
+// END: pages:resume:academics }}}
+// END: pages:resume }}}

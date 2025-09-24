@@ -1,0 +1,17 @@
+{% comment %}
+<!-- vim: set ts=2 sw=2 et: -->
+{% endcomment %}
+<div class="r_techsection">
+  {% for te in include.c %}
+  {% assign t = site.technologies | where:"tag",te.t | first %}
+  <div class="r_techslot">
+    <div class="r_techslot_title">
+      {% if t.homepage %}
+      <a href="{{t.homepage}}">{{t.name}}</a>
+      {% else %}
+      {{t.name}}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

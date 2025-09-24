@@ -1,0 +1,54 @@
+// vim: set ts=2 sw=2 et:
+/* Other projects and activities section styles */
+div.slot_op
+  @extend %g_shared
+  width: 100%
+  margin: 8px 0px 8px 0px
+  display: flex
+  div.handle
+    @extend %g_shared
+    width: auto
+    padding: 4px
+    +bg_carbon($g_clr_fg)
+    border-radius: 4px 0px 0px 4px
+  div.content
+    @extend %g_shared
+    width: 100%
+    padding: 4px
+    background: darken($g_clr_dwhite, 7%)
+    h5.name
+      @extend %r_hx_common
+      vertical-align: top
+      font-size: 16px
+      text-align: center
+    div.goal
+      @extend %g_shared
+      margin: 2px
+      text-align: center
+      background: inherit
+    table.t_op_desc
+      @extend %r_tbl_shared
+      th.param
+        @extend %r_tbl_th
+        width: 100%
+      td.value
+        @extend %r_tbl_td
+        width: 100%
+    table.t_op_rnd
+      @extend %r_tbl_shared
+      th.param
+        @extend %r_tbl_th
+        width: 100%
+      td.value
+        @extend %r_tbl_td
+        width: 100%
+        >ul
+          padding: 0px 1em 0px 2em
+          >li
+            padding: 0px 1em 0px 2em
+    table.t_op_tech
+      @extend %r_tbl_shared
+      th.param
+        @extend %r_tbl_th
+      td.value
+        @extend %r_tbl_td

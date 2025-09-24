@@ -1,0 +1,94 @@
+// vim: set ts=2 sw=2 et:
+// TODO: Closing and opening work experience nodes
+// TODO: Closing and opening personal projects
+
+// resume variables
+$r_bgd_clr: $g_clr_bg
+$r_sec_clr: $g_clr_dwhite
+$r_hdr_clr: darken($g_clr_dwhite, 8%)
+$r_slot_clr: $g_clr_dwhite
+$r_techslot_clr: $r_hdr_clr
+$r_txt_clr: $g_txt_clr
+//
+$g_rsection_bgr_clr: linear-gradient(lighten($r_bgd_clr, 20%), $r_bgd_clr)
+$g_rsection_hovbgr_clr: linear-gradient($g_clr_red, $g_clr_dred)
+$g_rsection_actbgr_clr: linear-gradient(darken($g_clr_red, 15%), darken($g_clr_dred, 15%))
+//
+$g_rperson_hdr_icon_fill_clr: $r_bgd_clr
+$g_rperson_hdr_icon_stroke_clr: lighten($g_rperson_hdr_icon_fill_clr, 15%)
+
+%r_tbl_shared
+  margin: 0px 0px 0px 0px
+  border: 0px 0px 0px 0px
+  width: 100%
+  background: $g_clr_dgrey
+  text-align: left
+  font-weight: normal
+  font-style: normal
+
+%r_tbl_th
+  background: $r_hdr_clr
+  text-align: left
+  width: 30%
+  font-weight: bold
+  font-style: normal
+  // font-size: 14px
+
+%r_tbl_td
+  background: $r_slot_clr
+  text-align: left
+  max-width: auto
+  width: auto
+  font-weight: normal
+  font-style: normal
+  // font-size: 14px
+
+%r_tbl_emp_hdr
+  margin: 0px 0px 0px 0px
+  border: 0px 0px 0px 0px
+  width: 100%
+  //background-color: black
+  background: transparent
+  text-align: left
+  font-weight: normal
+  font-style: normal
+  th
+    //background: inherit
+    padding: 4px
+    text-align: center
+  td
+    background: $r_slot_clr
+    padding: 4px
+    box-shadow: inset 0px 0px 2px 2px $r_bgd_clr
+    text-align: center
+    +media_print()
+
+%r_proj_img
+  background: $g_code_clr
+  width: 48px
+  height: 48px
+  box-shadow: inset 0px 0px 2px 2px $g_clr_bg
+  padding: 4px
+  rect
+    fill: $g_code_clr
+    //$g_rperson_hdr_icon_bgr_clr
+  +media_print()
+
+%r_hx_common
+  background: linear-gradient(darken($r_hdr_clr, 10%), $r_hdr_clr)
+  padding: 4px
+  margin: 0px 0px 4px 0px
+  box-shadow: inset 0px 0px 2px 1px $g_clr_dgrey
+  +media_print()
+
+//=makebox()
+
+=transform($property)
+  -webkit-transform: $property
+  -ms-transform: $property
+  transform: $property
+
+@import 'page'
+@import 'employer'
+@import 'academics'
+@import 'project'

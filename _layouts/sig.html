@@ -1,0 +1,74 @@
+---
+---
+{% comment %}
+<!-- vim: set ts=2 sw=2: -->
+{% endcomment %}
+<!-- TODO: do the image export (png or jpeg) ??? -->
+<!doctype html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+  {% include header.html %}
+  <body>
+    <div class="r_section">
+      <table class="e-sig">
+        <tr>
+          <th>20220819</th>
+        </tr>
+        <tr>
+          <td> <!-- BEGIN: signature -->
+          {% include sig-20220819.html %}
+          </td> <!-- END: signature -->
+        </tr>
+      </table>
+    </div>
+    <div class="r_section">
+      <table class="e-sig">
+        <tr>
+          <th>simple</th>
+        </tr>
+        <tr>
+          <td> <!-- BEGIN: signature -->
+          {% include sig.html %}
+          </td> <!-- END: signature -->
+        </tr>
+      </table>
+      <table class="e-sig">
+        <tr>
+          <th>For outlook crap</th>
+        </tr>
+        <tr>
+          <td> <!-- BEGIN: signature -->
+            <div name="divtagdefaultwrapper" style="font-family:Calibri,Arial,Helvetica,sans-serif; font-size:; margin:0">
+              {% include sig.html %}
+            </div>
+          </td> <!-- END: signature -->
+        </tr>
+      </table>
+      <table class="e-sig">
+        <tr>
+          <th>For google-mail</th>
+        </tr>
+        <tr>
+          <td> <!-- BEGIN: signature -->
+            <div class="gmail_signature" data-smartmail="gmail_signature">
+              <div dir="ltr">
+                <div>
+                  <div dir="ltr">
+                    {% include sig.html %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td> <!-- END: signature -->
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
